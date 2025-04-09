@@ -1,25 +1,29 @@
 package org.example;
 
+import java.util.ArrayDeque;
+import java.util.Queue;
 import java.util.Stack;
 
 public class Main {
     public static void main(String[] args) {
-        Stack stack = new Stack();
-        stack.push("Hello");
-        stack.push("World");
-        stack.push("World");
-        stack.push("World");
-        stack.push("Amir");
-        stack.push("World");
-        stack.push("World");
-        stack.push("World");
-        stack.push("Ahhhhh");
-        stack.push("GOt");
-        stack.push("An");
-        System.out.println(stack.pop());
-        System.out.println(stack.peek());
+        Queue<Integer> queue = new ArrayDeque<>();
+        queue.add(1);
+        queue.add(2);
+        queue.add(3);
+        queue.add(4);
+        System.out.println(queue);
+        reverse(queue);
+        System.out.println(queue);
 
+    }
+    public static void reverse (Queue<Integer> queue) {
+        Stack<Integer> stack = new Stack<>();
+        while (!queue.isEmpty()) {
+            stack.push(queue.poll());
+        }
+        while (!stack.isEmpty()) {
+            queue.add(stack.pop());
+        }
 
-        System.out.println(stack);
     }
 }
