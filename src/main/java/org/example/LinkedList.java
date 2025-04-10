@@ -1,6 +1,6 @@
 package org.example;
 
-public class LinkedList {
+public class LinkedList<E> {
 
     private Node head;
     private Node tail;
@@ -9,16 +9,16 @@ public class LinkedList {
 
 
     public void addFirst(int value) {
-        head = new Node(value);
+        head = new Node(value, value);
     }
     public void addLast(int value) {
         if (tail == null) {
-            tail = new Node(value);
+            tail = new Node(value, value);
             head.setNext(tail);
         }
         else {
             formerTail = tail;
-            tail = new Node(value);
+            tail = new Node(value, value);
             formerTail.setNext(tail);
         }
     }
